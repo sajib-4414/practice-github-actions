@@ -2,7 +2,7 @@ name: Deploy fifth project
 on: push
 jobs:
   lint-test-build:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v4
