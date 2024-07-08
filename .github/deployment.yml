@@ -1,0 +1,20 @@
+name: Deploy fifth project
+on: push
+jobs:
+  lint-test-build:
+    runs-on: ubunut-latest
+    steps:
+      - Get code:
+        uses: actions/checkout@v4
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Intall dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm lint
+      - name: Running test
+        run: npm test
+      - name: Build project
+        run: npm run build
