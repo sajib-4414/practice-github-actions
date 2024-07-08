@@ -4,7 +4,7 @@ jobs:
   lint-test-build:
     runs-on: ubunut-latest
     steps:
-      - Get code:
+      - name: Get code
         uses: actions/checkout@v4
       - name: Install Nodejs
         uses: actions/setup-node@v3
