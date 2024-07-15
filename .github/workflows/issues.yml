@@ -1,7 +1,5 @@
 name : Check new issue
 on: workflow_dispatch
-    # issue_comment:
-    #     types: [created, deleted]
 jobs:
     info:
         runs-on: ubuntu-latest
