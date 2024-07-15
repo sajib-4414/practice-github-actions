@@ -14,7 +14,29 @@ jobs:
         run: npm ci
       - name: Lint code
         run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Intall dependencies
+        run: npm ci
       - name: Running test
         run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install Nodejs
+        uses: actions/setup-node@v3 #its a custom marketplace plugin, it does a lot of shell commands under the hood to make it easy
+        with:
+          node-version: '18'
+      - name: Intall dependencies
+        run: npm ci
       - name: Build project
         run: npm run build
